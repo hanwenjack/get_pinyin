@@ -57,12 +57,12 @@ if __name__ == "__main__":
 
     pinyinname_list = open('pinyinname_list.txt','w')
     for name in name_list:
-	name = name.strip().decode('gbk')
+	name = name.strip().decode('gbk')             # 处理utf格式的文本时，参数需设为utf-8，或修改name.txt的编码格式为gbk
 	pinyinname = ''.join(test.hanzi2pinyin(string=name)).strip()
 
 	pinyinname_list.write(pinyinname + '\n')
 
-    print (u'已生成pinyinname_list.txt文件！')
+    print (u'已生成pinyinname_list.txt文件！')    #在linux shell中执行时应去掉u
     pinyinname_list.close()
 
 
